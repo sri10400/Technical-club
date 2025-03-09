@@ -24,7 +24,7 @@ model = GNNModel(input_dim, hidden_dim, output_dim)
 model.to(device)
 print("✅ Model moved to device successfully!")
 
-'''
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -73,6 +73,7 @@ data['user_id'] -= 1  # Convert user IDs to zero-based index
 data['movie_id'] -= 1  # Convert movie IDs to zero-based index
 
 # ======================= 3. Load and Align Embeddings =======================
+
 user_embeddings = torch.load("user_embeddings.pt")
 movie_embeddings = torch.load("movie_embeddings.pt")
 
@@ -158,7 +159,7 @@ print(f"✅ Recall@10: {recall_k:.4f}")
 print(f"✅ NDCG@10: {ndcg_k:.4f}")
 
 # ======================= 8. Graph Visualization =======================
-
+'''
 torch.save(edge_index, "edge_index.pth")
 edge_list = edge_index.numpy().T.tolist()
 G = nx.Graph()
